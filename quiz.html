@@ -11,83 +11,83 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="background-color: rgb(235, 242, 247);">
+    <form id="myForm" action="/goodbye.html" method="POST">
+        <div class="container-fluid" style="background-color: rgb(235, 242, 247);">
 
-        <div class="question_container">
-            <div class="question_title">
-                <span>1</span>
-            </div>
-            <img src="imgs/1.png" />
-            <div class="options_container">
-                <div class="row">
-                    <div class="col-sm-2"><input type="radio" name="q1" value="A">A</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="B">B</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="C">C</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="D">D</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="E">C</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="F">Don't know</input>
+            <div class="question_container">
+                <div class="question_title">
+                    <span>1</span>
+                </div>
+                <img src="imgs/1.png" />
+                <div class="options_container">
+                    <div class="row">
+                        <div class="col-sm-2"><input type="radio" name="q1" value="A">A</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q1" value="B">B</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q1" value="C">C</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q1" value="D">D</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q1" value="E">C</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q1" value="F">Don't know</input>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="question_container">
-            <div class="question_title">
-                <span>2</span>
-            </div>
-            <img src="imgs/1.png" />
-            <div class="options_container">
-                <div class="row">
-                    <div class="col-sm-2"><input type="radio" name="q2" value="A">A</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q2" value="B">B</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q2" value="C">C</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q2" value="D">D</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q2" value="E">C</input>
-                    </div>
-                    <div class="col-sm-2"><input type="radio" name="q2" value="F">Don't know</input>
+            <div class="question_container">
+                <div class="question_title">
+                    <span>2</span>
+                </div>
+                <img src="imgs/1.png" />
+                <div class="options_container">
+                    <div class="row">
+                        <div class="col-sm-2"><input type="radio" name="q2" value="A">A</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q2" value="B">B</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q2" value="C">C</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q2" value="D">D</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q2" value="E">C</input>
+                        </div>
+                        <div class="col-sm-2"><input type="radio" name="q2" value="F">Don't know</input>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
-
-    </div>
-
-
+    </form>
 
     <div id="countdownTimer" class="timer-container">120</div>
- 
+
 
     <script>
         function startTimer(duration, display) {
             var timer = duration,
                 minutes;
-            setInterval(function() {
+            setInterval(function () {
                 minutes = parseInt(timer / 60, 10)
 
                 minutes = minutes < 10 ? "0" + minutes : minutes;
 
-                if(minutes < 10){
-                    display.style.backgroundColor="rgb(255,0,0,0.658)";
+                if (minutes < 10) {
+                    display.style.backgroundColor = "rgb(255,0,0,0.658)";
                 }
 
                 display.textContent = minutes;
 
                 if (--timer < 0) {
-                    timer = duration;
+                    document.getElementById("myForm").submit();
                 }
             }, 1000);
         }
 
-        window.onload = function() {
+        window.onload = function () {
             var display = document.querySelector('#countdownTimer');
             startTimer(11 * 60, display);
         };
