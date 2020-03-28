@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Quize Experiment</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="quize.css">
+
+</head>
+
+<body>
+    <div class="container-fluid" style="background-color: rgb(235, 242, 247);">
+
+        <div class="question_container">
+            <div class="question_title">
+                <span>1</span>
+            </div>
+            <img src="imgs/1.png" />
+            <div class="options_container">
+                <div class="row">
+                    <div class="col-sm-2"><input type="radio" name="q1" value="A">A</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="B">B</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="C">C</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="D">D</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="E">C</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="F">Don't know</input>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question_container">
+            <div class="question_title">
+                <span>2</span>
+            </div>
+            <img src="imgs/1.png" />
+            <div class="options_container">
+                <div class="row">
+                    <div class="col-sm-2"><input type="radio" name="q1" value="A">A</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="B">B</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="C">C</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="D">D</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="E">C</input>
+                    </div>
+                    <div class="col-sm-2"><input type="radio" name="q1" value="F">Don't know</input>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="countdownTimer" class="timer-container">120</div>
+ 
+
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes;
+            setInterval(function() {
+                minutes = parseInt(timer / 60, 10)
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+
+                display.textContent = minutes;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            var display = document.querySelector('#countdownTimer');
+            startTimer(120 * 60, display);
+        };
+    </script>
+</body>
+
+</html>
