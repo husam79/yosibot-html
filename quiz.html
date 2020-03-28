@@ -43,17 +43,17 @@
             <img src="imgs/1.png" />
             <div class="options_container">
                 <div class="row">
-                    <div class="col-sm-2"><input type="radio" name="q1" value="A">A</input>
+                    <div class="col-sm-2"><input type="radio" name="q2" value="A">A</input>
                     </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="B">B</input>
+                    <div class="col-sm-2"><input type="radio" name="q2" value="B">B</input>
                     </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="C">C</input>
+                    <div class="col-sm-2"><input type="radio" name="q2" value="C">C</input>
                     </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="D">D</input>
+                    <div class="col-sm-2"><input type="radio" name="q2" value="D">D</input>
                     </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="E">C</input>
+                    <div class="col-sm-2"><input type="radio" name="q2" value="E">C</input>
                     </div>
-                    <div class="col-sm-2"><input type="radio" name="q1" value="F">Don't know</input>
+                    <div class="col-sm-2"><input type="radio" name="q2" value="F">Don't know</input>
                     </div>
                 </div>
             </div>
@@ -75,6 +75,10 @@
 
                 minutes = minutes < 10 ? "0" + minutes : minutes;
 
+                if(minutes < 10){
+                    display.style.color="red";
+                }
+
                 display.textContent = minutes;
 
                 if (--timer < 0) {
@@ -85,7 +89,7 @@
 
         window.onload = function() {
             var display = document.querySelector('#countdownTimer');
-            startTimer(120 * 60, display);
+            startTimer(11 * 60, display);
         };
     </script>
 </body>
